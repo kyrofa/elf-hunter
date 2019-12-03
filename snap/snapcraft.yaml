@@ -1,0 +1,21 @@
+name: elf-hunter-kyrofa
+version: '0.1'
+confinement: strict
+grade: stable
+base: core18
+
+summary: Search directory for weird ELF files
+description: |
+  Simply run `elf-hunter-kyrofa <directory>` to recursively search it
+  for weird ELF files.
+
+apps:
+  elf-hunter-kyrofa:
+    command: elf-hunter
+    plugs: [home]
+
+parts:
+  python:
+    plugin: python
+    source: .
+    requirements: [requirements.txt]
